@@ -1,13 +1,13 @@
 # HAN_chatbot
 Project for the HAN
 ## Used packages
-langchain
+1. langchain
 
-langchain-community
+2. langchain-community
 
-faiss-cpu
+3. faiss-cpu (RAG)
 
-pypdf
+4. pypdf
 
-ollama
+5. ollama
 
