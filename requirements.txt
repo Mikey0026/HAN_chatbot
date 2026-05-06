@@ -1,0 +1,17 @@
+# Core orchestration
+langchain==0.3.7
+langchain-community==0.3.7
+
+# Maintained Ollama integration (the old `from langchain.llms import Ollama`
+# is deprecated — these are the current packages).
+langchain-ollama==0.2.0
+langchain-chroma==0.1.4
+
+# Vector store
+chromadb==0.5.18
+
+# PDF loader
+pypdf==5.1.0
+
+# Config + CLI niceties
+pyyaml==6.0.2
