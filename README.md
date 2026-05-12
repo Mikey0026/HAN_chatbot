@@ -8,8 +8,8 @@ Built by Mike & Loukas as a school project, following the CRISP-DM methodology.
 
 ## Why local?
 
-No student data leaves the machine. No external API keys. The full stack —
-LLM, embeddings, and vector store — runs on your laptop.
+No student data leaves the machine. No external API keys. The full stack
+LLM, embeddings, vector store and runs on your laptop.
 
 ## Stack
 
@@ -40,7 +40,7 @@ han_internship_agent/
 └── docs/
 ```
 
-The folder layout mirrors CRISP-DM phases — `data/` for raw inputs,
+The folder layout mirrors CRISP-DM phases: `data/` for raw inputs,
 `src/ingestion/` for Data Preparation, `src/rag/` for Modeling, `evaluation/`
 for the Evaluation phase. Easy to explain in the report.
 
