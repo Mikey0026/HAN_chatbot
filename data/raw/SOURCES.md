@@ -18,7 +18,7 @@ internship coordinator.
 
 ## Notes for ingestion
 
-- The GI manual is text-based (not scanned), so `PyPDFLoader` will work directly — no OCR needed.
+- The GI manual is text-based (not scanned), so `PyPDFLoader` will work directly, no OCR needed.
 - The manual contains structured sections, tables (timeline, HandIn codes, graduation protocol), and per-specialisation appendices. Chunking should preserve section boundaries where possible (RecursiveCharacterTextSplitter with paragraph/section separators).
 - Page numbers should be kept in chunk metadata so the bot can cite "Manual page X" when answering.
 - The per-specialisation appendices (O&C, M&S, Finance, SCM, CS) are largely parallel in structure, chunk metadata should include the specialisation tag so retrieval can be filtered when a student mentions their stream.
