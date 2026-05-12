@@ -14,7 +14,7 @@ internship coordinator.
 ## Pending
 
 - [ ] Second HAN PDF (is added but needs testing)
-- [ ] FAQ document (format TBD — Word / Markdown / spreadsheet)
+- [ ] FAQ document (format TBD / Word / Markdown / spreadsheet)
 
 ## Notes for ingestion
 
