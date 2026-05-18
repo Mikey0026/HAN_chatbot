@@ -1,21 +1,14 @@
 """
-Ingestion pipeline — Phase 3 of CRISP-DM (Data Preparation).
-
-Loads every PDF in `data/raw/`, splits each page into overlapping chunks,
+Ingestion pipeline
+Loads every PDF in data/raw/, splits each page into overlapping chunks,
 embeds the chunks with a local Ollama embedding model, and persists the
 result in a ChromaDB collection on disk.
 
 Run with:
     python -m src.ingestion.build_index
 
-Re-running is safe — the existing collection is wiped and rebuilt from
+Re-running is safe, the existing collection is wiped and rebuilt from
 scratch so we never accumulate stale chunks during development.
-
-Future work (when the FAQ document arrives):
-    Load FAQ from `data/faq/` and add each Q&A pair as a single chunk
-    (rather than running it through the recursive splitter). Add a
-    `source_type` field to chunk metadata so retrieval can distinguish
-    "manual" vs "faq" passages.
 """
 from __future__ import annotations
 
