@@ -1,13 +1,6 @@
 """
 Streamlit web UI for the HAN Internship Support Agent.
 
-Wraps the existing RAG pipeline (src/rag/chat.py) in a browser-based chat
-interface, styled to match HAN University's brand identity:
-  - HAN Pink (#E6007E) as primary accent
-  - Black (#000000) background with white text
-  - HAN logo loaded locally from assets/han_logo.png
-  - ChatGPT-style pill-shaped chat input with inline send button
-
 Run with (from the project root):
     streamlit run app.py
 
@@ -33,9 +26,8 @@ from src.rag.chat import (
 )
 
 
-# -----------------------------------------------------------------------------
+
 # HAN brand palette (dark mode)
-# -----------------------------------------------------------------------------
 HAN_PINK = "#E6007E"        # primary accent
 HAN_PINK_DARK = "#B8005F"   # hover / active states
 HAN_BG = "#0E1117"          # main background
@@ -48,19 +40,18 @@ HAN_TEXT_DIM = "#B0B0B0"
 HAN_LOGO_PATH = str(Path(__file__).resolve().parent / "assets" / "han_logo.png")
 
 
-# -----------------------------------------------------------------------------
+
 # Page setup
-# -----------------------------------------------------------------------------
+
 st.set_page_config(
     page_title="HAN Internship Assistant",
-    page_icon="🎓",
     layout="centered",
 )
 
 
-# -----------------------------------------------------------------------------
-# Custom CSS — dark theme with HAN accents
-# -----------------------------------------------------------------------------
+
+# Custom CSS theme HAN accents
+
 st.markdown(
     f"""
     <style>
@@ -270,9 +261,9 @@ st.markdown(
 )
 
 
-# -----------------------------------------------------------------------------
+
 # Header — HAN logo + title
-# -----------------------------------------------------------------------------
+
 header_left, header_right = st.columns([1, 4])
 with header_left:
     if Path(HAN_LOGO_PATH).exists():
@@ -289,11 +280,11 @@ with header_right:
 st.write("")  # vertical breathing room
 
 
-# -----------------------------------------------------------------------------
+
 # One-time resource loading
 # Streamlit reruns the whole script on every interaction, so we cache the
 # heavy stuff (vector store, LLM) to avoid reloading the model every message.
-# -----------------------------------------------------------------------------
+
 @st.cache_resource(show_spinner="Loading models and vector store...")
 def load_resources():
     cfg = load_config()
@@ -320,9 +311,9 @@ def load_resources():
 cfg, vector_store, llm = load_resources()
 
 
-# -----------------------------------------------------------------------------
+
 # Sidebar — info and controls
-# -----------------------------------------------------------------------------
+
 with st.sidebar:
     if Path(HAN_LOGO_PATH).exists():
         st.image(HAN_LOGO_PATH, width=140)
@@ -349,11 +340,11 @@ with st.sidebar:
         st.rerun()
 
 
-# -----------------------------------------------------------------------------
+
 # Conversation state
 # st.session_state persists across reruns of the script (i.e. between user
 # messages) but resets when the browser tab is closed.
-# -----------------------------------------------------------------------------
+
 if "messages" not in st.session_state:
     # Display-only list: each item is {"role": "user"|"assistant", "content": str, "sources": str?}
     st.session_state.messages = []
@@ -363,9 +354,9 @@ if "history" not in st.session_state:
     st.session_state.history = []
 
 
-# -----------------------------------------------------------------------------
+
 # Render the chat so far
-# -----------------------------------------------------------------------------
+
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
@@ -374,9 +365,9 @@ for msg in st.session_state.messages:
                 st.markdown(msg["sources"])
 
 
-# -----------------------------------------------------------------------------
+
 # Handle a new question
-# -----------------------------------------------------------------------------
+
 if question := st.chat_input("Ask about your internship..."):
     # 1. Show the user's message immediately.
     st.session_state.messages.append({"role": "user", "content": question})
