@@ -25,6 +25,11 @@ retrieval_k: 4
 chunk_size: 800
 chunk_overlap: 150
 
+# --- Conversation memory ---
+# How many past turns (question + answer pairs) to include in the prompt.
+# 0 = stateless (original behaviour). 5 is a sensible default.
+max_history_turns: 5
+
 # --- Paths (relative to the project root) ---
 raw_pdf_dir: "data/raw"
 faq_dir: "data/faq"
