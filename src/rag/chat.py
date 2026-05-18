@@ -42,6 +42,10 @@ Rules:
 Context:
 {context}
 
+PROMPT_TEMPLATE = """...
+Conversation so far:
+{history}
+
 Question: {question}
 
 Answer:"""
@@ -74,6 +78,14 @@ def format_sources(docs: List[Document]) -> str:
             lines.append(f"  - {src}, page {page_human}")
     return "\n".join(lines)
 
+def format_history(history: List[Tuple[str, str]]) -> str:
+    if not history:
+        return "(no previous messages)"
+    lines = []
+    for user_msg, bot_msg in history:
+        lines.append(f"Student: {user_msg}")
+        lines.append(f"Bot: {bot_msg}")
+    return "\n".join(lines)
 
 def answer_question(
     question: str,
@@ -134,7 +146,7 @@ def main() -> None:
         if question.lower() in {"quit", "exit"}:
             break
 
-        answer, docs = answer_question(question, vector_store, llm, cfg["retrieval_k"])
+        answer, docs = answer_question(question, vector_store, llm, cfg["retrieval_k"], history)
         print(f"\nBot: {answer}\n")
         if docs:
             print("Sources used:")
