@@ -15,3 +15,6 @@ pypdf==5.1.0
 
 # Config + CLI niceties
 pyyaml==6.0.2
+
+#Streamlit frontend
+streamlit==1.40.1
