@@ -1,6 +1,5 @@
 """
-RAG chat loop — Phase 4 of CRISP-DM (Modeling).
-
+RAG chat loop
 Retrieves the top-k most relevant chunks from ChromaDB for a student's
 question, passes them to a local LLM via Ollama with a grounded prompt,
 and prints the answer plus the sources used.
@@ -8,12 +7,12 @@ and prints the answer plus the sources used.
 If the retriever returns nothing (or the LLM cannot find an answer in the
 context), the bot tells the student to contact the internship coordinator
 rather than guess. This is the single most important guardrail in the
-system — enforced both by the prompt and by the empty-retrieval check.
+system, enforced both by the prompt and by the empty retrieval check.
 
 Run with:
     python -m src.rag.chat
 
-Type 'quit', 'exit', or hit Ctrl-D to leave.
+Type 'quit' or hit Ctrl-D to leave.
 """
 from __future__ import annotations
 
