@@ -4,33 +4,33 @@
 # without grepping through code.
 # =============================================================================
 
-# --- Models (served by local Ollama) ---
+# AI Models
 llm_model: "llama3.1:8b"
 embedding_model: "nomic-embed-text"
 
-# --- Generation ---
+# Generation
 # Low temperature → less hallucination, more deterministic answers.
 # Important for a grounded RAG system.
 temperature: 0.1
 
-# --- Retrieval ---
+# Retrieval
 # How many chunks to pull from the vector store per question.
 # Start at 4; tune during the Evaluation phase.
 retrieval_k: 4
 
-# --- Chunking (RecursiveCharacterTextSplitter for PDFs) ---
+# Chunking (RecursiveCharacterTextSplitter for PDFs)
 # 800 chars (~150 tokens) is a reasonable middle ground for academic / policy
-# text — large enough to keep a paragraph intact, small enough to stay focused.
+# text, large enough to keep a paragraph intact, small enough to stay focused.
 # Overlap of 150 preserves continuity across boundaries.
 chunk_size: 800
 chunk_overlap: 150
 
-# --- Conversation memory ---
+# Conversation memory
 # How many past turns (question + answer pairs) to include in the prompt.
-# 0 = stateless (original behaviour). 5 is a sensible default.
+# 0 = no history. 5 is a sensible default. More can lead to longer load times to answer.
 max_history_turns: 5
 
-# --- Paths (relative to the project root) ---
+# Paths (relative to the project root)
 raw_pdf_dir: "data/raw"
 faq_dir: "data/faq"
 vector_store_dir: "chroma_db"
