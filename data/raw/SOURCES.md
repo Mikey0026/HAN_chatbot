@@ -9,12 +9,12 @@ internship coordinator.
 
 | File | Description | Audience | Year |
 |---|---|---|---|
-| `GI_manual_2025-2026.pdf` | Graduation Internship Manual: full guidelines for the GI process: admission threshold, acquisition, approval, deliverables, timeline, assessment (including the 5 Performance Areas), CBI procedure, resit/retake rules, and all appendices (assessment form, 360° feedback form, appraisal form, per-specialisation info sheets, AI use policy). | IB and CS students | 2025-2026 |
+| `GI_manual_2025-2026.pdf` | Graduation Internship Manual: full guidelines for the Graduation internships: admission threshold, acquisition, approval, deliverables, timeline, assessment (including the 5 Performance Areas), CBI procedure, resit/retake rules, and all appendices (assessment form, 360° feedback form, appraisal form, per-specialisation info sheets, AI use policy). | IB and CS students | 2025-2026 |
+| `3rd year internship manual Sem2 2025-2026` | 3rd year internship manual: full guidelines for the 3rd year internships. | IB and CS students | 2025-2026 | 
 
 ## Pending
 
-- [ ] Second HAN PDF (is added but needs testing)
-- [ ] FAQ document (format TBD / Word / Markdown / spreadsheet)
+- [ ] FAQ document? (format TBD / Word / Markdown / spreadsheet)
 
 ## Notes for ingestion
 
