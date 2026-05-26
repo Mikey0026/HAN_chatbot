@@ -59,7 +59,7 @@ def chunk_documents(
     """Split page-level Documents into overlapping chunks.
 
     The separator hierarchy ("\\n\\n", "\\n", ". ", " ") tries paragraph
-    breaks first and falls back to softer boundaries — this keeps related
+    breaks first and falls back to softer boundaries, this keeps related
     sentences together when possible.
     """
     splitter = RecursiveCharacterTextSplitter(
@@ -80,7 +80,7 @@ def build_index() -> None:
     raw_dir = root / cfg["raw_pdf_dir"]
     store_dir = root / cfg["vector_store_dir"]
 
-    # Clean rebuild — avoids stale chunks during iterative development.
+    # Clean rebuild, avoids stale chunks during iterative development.
     if store_dir.exists():
         print(f"[ingestion] Removing existing vector store at {store_dir}")
         shutil.rmtree(store_dir)
