@@ -9,7 +9,7 @@ Built by Mike & Loukas as a school project, following the CRISP-DM methodology.
 
 No student data leaves the machine. No external API keys. The full stack
 LLM, embeddings, vector store and runs on your laptop.
-This is done in order to keep private data private and free to use.
+This is done in order to keep private data private and most important: free to use.
 
 ## Stack
 
@@ -23,19 +23,19 @@ This is done in order to keep private data private and free to use.
 
 ```
 han_internship_agent/
-├── config.yaml                 # Single source of truth for tunables
+├── config.yaml                 
 ├── requirements.txt
 ├── data/
 │   ├── raw/                    # Official HAN PDFs (source of truth)
 │   │   ├── GI_manual_2025-2026.pdf
 │   │   └── SOURCES.md
-│   └── faq/                    # FAQ document(s)
+│   └── faq/                    
 ├── src/
-│   ├── ingestion/build_index.py   # Phase 3: chunk + embed + persist
-│   ├── rag/chat.py                # Phase 4: retrieve + generate
+│   ├── ingestion/build_index.py   
+│   ├── rag/chat.py                
 │   └── utils/config.py
 ├── chroma_db/                  # Vector store (gitignored)
-├── evaluation/                 # Phase 5: test questions + results
+├── evaluation/                 
 ├── tests/
 └── docs/
 ```
@@ -66,6 +66,10 @@ python -m src.rag.chat
 Currently ingested:
 - **GI_manual_2025-2026.pdf**
 - **3rd year_internship_manual_Sem2_2025-2026**
+- **Usage of AI**
+- **Where to find the third year internship agreement & NDA & declaration letter**
+- **Where to find the graduation internship agreement & NDA & declaration letter**
+- **Where to find the graduation internship information on Brightspace**
 - A possible FAQ
 
 See `data/raw/SOURCES.md` for details.
@@ -74,5 +78,6 @@ See `data/raw/SOURCES.md` for details.
 
 The bot answers **ONLY** from the source documents. If retrieval doesn't
 surface a relevant passage, the bot tells the student to contact the
-internship coordinator rather than guess. This is enforced in the prompt
+internship advisor rather than guess. This is enforced in the prompt
 template, not just by hope.
+UPDATE: The bot refers more frequently to appendices instead of just referring the student to the advisor. This was requested by the advisor.
