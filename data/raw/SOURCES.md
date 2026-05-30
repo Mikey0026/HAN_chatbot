@@ -10,7 +10,11 @@ internship coordinator.
 | File | Description | Audience | Year |
 |---|---|---|---|
 | `GI_manual_2025-2026.pdf` | Graduation Internship Manual: full guidelines for the Graduation internships. | IB and CS students | 2025-2026 |
-| `3rd year internship manual Sem2 2025-2026` | 3rd year internship manual: full guidelines for the 3rd year internships. | IB and CS students | 2025-2026 | 
+| `3rd year internship manual Sem2 2025-2026` | 3rd year internship manual: full guidelines for the 3rd year internships. | IB and CS students | 2025-2026 |
+| `Usage of AI.pdf` | PDF with information about the usage of AI. | IB and CS students | 2025-2026 |
+| `Where to find the graduation internship agreement & NDA & declaration letter.pdf` | PDF with information about the internship agreement, NDA and declaration letter. | IB and CS students | 2025-2026 |
+| `Where to find the third year internship agreement & NDA & declaration letter.pdf` | PDF with information about the internship agreement, NDA and declaration letter. | IB and CS students | 2025-2026 |
+| `Where to find the graduation internship information on Brightspace.pdf` | PDF with information about where the manual is of the GI in Brightspace. | IB and CS students | 2025-2026 |
 
 ## Pending
 
