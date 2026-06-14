@@ -1,0 +1,35 @@
+# Configuration for the HAN Internship Support Agent
+# All tunable parameters live here so we can sweep them during evaluation
+# without scavenging through the code.
+
+# Models (served by local Ollama)
+llm_model: "llama3.1:8b"
+embedding_model: "nomic-embed-text"
+
+# Generation
+# Low temperature → less hallucination, more deterministic answers.
+# Important for a grounded RAG system.
+temperature: 0.1
+
+# --- Retrieval ---
+# How many chunks to pull from the vector store per question.
+# Start at 4; tuned it to 8
+retrieval_k: 8
+
+# Chunking (RecursiveCharacterTextSplitter for PDFs)
+# 1000 chars is a reasonable middle ground
+# text is large enough to keep a paragraph intact, small enough to stay focused.
+# Overlap of 300 preserves continuity across boundaries.
+chunk_size: 1000
+chunk_overlap: 300
+
+# Conversation memory
+# How many past turns (question + answer pairs) to include in the prompt.
+# 0 = stateless (original behaviour). 5 is a sensible default.
+max_history_turns: 5
+
+# Paths (relative to the project root)
+raw_pdf_dir: "data/raw"
+faq_dir: "data/faq"
+vector_store_dir: "chroma_db"
+collection_name: "han_internship"
