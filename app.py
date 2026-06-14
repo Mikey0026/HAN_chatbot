@@ -1,20 +1,11 @@
 """
-Streamlit web UI for the HAN Internship Support Agent.
-
-Wraps the existing RAG pipeline (src/rag/chat.py) in a browser-based chat
-interface, styled to match HAN University's brand identity:
-  - HAN Pink (#E6007E) as primary accent
-  - Black (#000000) background with white text
-  - HAN logo loaded locally from assets/han_logo.png
-  - ChatGPT-style pill-shaped chat input
-
-UX additions from advisor feedback (May 2026):
+UX additions from advisor feedback:
   - Students pick which internship they're asking about (Third-Year or
     Graduation), so retrieval doesn't mix the two manuals.
   - Sidebar widget that computes the portfolio submission deadline as
     4 weeks before the internship end date" (advisor's new rule).
 
-Run with (from the project root):
+Run(from the project root):
     streamlit run app.py
 """
 from __future__ import annotations
