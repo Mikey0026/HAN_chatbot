@@ -22,20 +22,27 @@ This is done in order to keep private data private and most important: free to u
 ## Project layout
 
 ```
-han_internship_agent/
-├── config.yaml                 
+HAN_chatbot/
+│
+├── app.py
+├── evaluate.py
+├── config.yaml
 ├── requirements.txt
+│
 ├── data/
-│   ├── raw/                    # Official HAN PDFs (source of truth)
-│   │   ├── GI_manual_2025-2026.pdf
-│   │   └── SOURCES.md
-│   └── faq/                    
+│   ├── raw/
+│   └── faq/
+│
 ├── src/
-│   ├── ingestion/build_index.py   
-│   ├── rag/chat.py                
-│   └── utils/config.py
-├── chroma_db/                  # Vector store (gitignored)
-├── evaluation/                 
+│   ├── ingestion/
+│   │   └── build_index.py
+│   ├── rag/
+│   │   └── chat.py
+│   └── utils/
+│       └── config.py
+│
+├── chroma_db/
+├── evaluation/
 ├── tests/
 └── docs/
 ```
