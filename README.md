@@ -17,7 +17,7 @@ This is done in order to keep private data private and most important: free to u
 - **Embeddings**: `nomic-embed-text` via Ollama
 - **Vector store**: ChromaDB (persisted in `chroma_db/`)
 - **Orchestration**: LangChain
-- **Interface**: CLI (for now)
+- **Interface**: Streamlit
 
 ## Project layout
 
@@ -65,7 +65,7 @@ pip install -r requirements.txt
 python -m src.ingestion.build_index
 
 # 4. Chat
-python -m src.rag.chat
+streamlit run app.py
 ```
 
 ## Sources
